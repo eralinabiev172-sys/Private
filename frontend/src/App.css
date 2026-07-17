@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.chat {
+  width: 100%;
+  max-width: 850px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  color: white;
+  background: #2563eb;
+}
+
+.chat-header h1 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.chat-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #dbeafe;
+}
+
+.ai-avatar {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: bold;
+  background: white;
+  color: #2563eb;
+  border-radius: 50%;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  background: #f1f5f9;
+}
+
+.message-row {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.message-row.ai {
+  justify-content: flex-start;
+}
+
+.message {
+  max-width: 75%;
+  padding: 12px 16px;
+  line-height: 1.5;
+  border-radius: 18px;
+  word-break: break-word;
+}
+
+.message.user {
+  color: white;
+  background: #2563eb;
+  border-bottom-right-radius: 5px;
+}
+
+.message.ai {
+  color: #1e293b;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 5px;
+}
+
+.input-container {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+}
+
+.input-container input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  outline: none;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+}
+
+.input-container input:focus {
+  border-color: #2563eb;
+}
+
+.input-container button {
+  padding: 13px 20px;
+  cursor: pointer;
+  color: white;
+  background: #2563eb;
+  border: none;
+  border-radius: 12px;
+}
+
+.input-container button:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 0;
+  }
+
+  .chat {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .chat-header h1 {
+    font-size: 17px;
+  }
+
+  .message {
+    max-width: 88%;
+  }
+
+  .input-container button {
+    padding: 12px;
+  }
+}
+.input-container button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.loading-message {
+  color: #64748b;
+  font-style: italic;
+}

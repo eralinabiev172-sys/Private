@@ -1,0 +1,13 @@
+{
+  "name": "my-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build"
+  },
+  "dependencies": {
+    "@google/genai": "^2.12.0"
+  }
+}
